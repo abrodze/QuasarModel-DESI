@@ -1,5 +1,5 @@
 # QuasarModel-DESI
-Quasar Models from Brodzeller et al. (2023) and updated HIZ template that accounts for lya mean transmission; files compatable with [redrock](https://github.com/desihub/redrock)
+Quasar Models from Brodzeller et al. (2023) and updated HIZ template that accounts for lya mean transmission. Files are compatable with [redrock](https://github.com/desihub/redrock). LOZ/HIZ_init will run in redrock main branch, but HIZ (lya optical depth upgraded model) requires customized redrock tag. See **TODO: ADD LINK** for more details. Contact abrodze@gmail.com for questions about this repository.
 
 # Files
 
@@ -12,7 +12,7 @@ Quasar Models from Brodzeller et al. (2023) and updated HIZ template that accoun
 
 # Example plotting for model components
 
-To plot the individual LOZ or HIZ_init eigenspectra from each file in python:
+To plot the individual eigenspectra from each file in python:
 ```
 from astropy.io import fits
 import numpy as np
@@ -33,5 +33,3 @@ plt.ylabel('flux desnity')
 plt.legend()
 plt.show()
 ````
-
-For example with HIZ that includes optical depth correction, see **TODO: add link**
