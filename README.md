@@ -1,5 +1,7 @@
 # QuasarModel-DESI
-Quasar Models from Brodzeller et al. (2023) and updated HIZ template that accounts for lya mean transmission. Files are compatable with [redrock](https://github.com/desihub/redrock). LOZ/HIZ_init will run in redrock main branch, but HIZ (lya optical depth upgraded model) requires customized redrock tag. See **TODO: ADD LINK** for more details. Contact abrodze@gmail.com for questions about this repository.
+Files accompanying [Brodzeller et al. (2023)](https://ui.adsabs.harvard.edu/abs/2023AJ....166...66B/abstract). Included in this repository are the quasar templates, SDSS redshift catalog used for training the templates, and an updated HIZ template that accounts for lya mean transmission. The latter model is discussed in Bault et al. (2024). All template files are compatable with [redrock](https://github.com/desihub/redrock). LOZ/HIZ_init will run in redrock main branch, but HIZ (the lya optical depth upgraded templates) requires a customized redrock tag. See **TODO: ADD LINK** for more details. LOZ/HIZ_init produced the standard quasar classifications for DESI year one data release. HIZ refined the z>1.6 DESI DR1 redshifts, redshift catalog to be released. 
+
+Contact abrodze@gmail.com for questions about this repository.
 
 # Files
 
@@ -9,6 +11,8 @@ Quasar Models from Brodzeller et al. (2023) and updated HIZ template that accoun
 
 **rrtemplate-qso-HIZ.fits** - Upgraded high redshift (1.4<z<1.7) quasar templates, trained on identical sample as above HIZ but individual spectra were corrected
                           for Lya effective optical depth via Kamble et al. (2020); redshift performance described in Bault et al. (2024)
+
+**trainingsample.fits** - catalog of SDSS spectra used to train the above templates; data model described below
 
 # Example plotting for model components
 
@@ -33,3 +37,16 @@ plt.ylabel('flux desnity')
 plt.legend()
 plt.show()
 ````
+
+# Data Model trainingsample.fits
+
+| Column name | # | Description |
+| - | -: | - |
+| plate       | 0 | SDSS spectroscopic plate number |   
+| mjd         | 1 | Modified Julian day of the spectroscopic observation |   
+| fiberid     | 2 | Spectroscopic fiber number |   
+| SNR         | 3 | mean signal-to-noise ratio per pixel of spectrum calculated using only lambda_RF(Z_PCA) > 1216 AA |
+| Z_PCA       | 4 | PCA redshift derived by the redvsblue algorithm, provided in the SDSS DR16 quasar catalog | 
+| Z_FIN       | 5 | Redshift used to train LOZ/HIZ quasar templates; derivation described in Section 3.2 of Brodzeller et al. (2023) | 
+| Z_REFINE    | 6 | Redshift determined when Lya forest is masked. If not -1, this redshift is used instead of Z_FIN | 
+
