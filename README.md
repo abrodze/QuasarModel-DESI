@@ -1,5 +1,5 @@
 # QuasarModel-DESI
-Files accompanying [Brodzeller et al. (2023)](https://ui.adsabs.harvard.edu/abs/2023AJ....166...66B/abstract). Included in this repository are the quasar templates, SDSS redshift catalog used for training the templates, and an updated HIZ template that accounts for lya mean transmission. The latter model is discussed in Bault et al. (2024). All template files are compatable with [redrock](https://github.com/desihub/redrock). LOZ/HIZ_init will run in redrock main branch, but HIZ (the lya optical depth upgraded templates) requires a customized redrock tag. See **TODO: ADD LINK** for more details. LOZ/HIZ_init produced the standard quasar classifications for DESI year one data release. HIZ refined the z>1.6 DESI DR1 redshifts, redshift catalog to be released. 
+Files accompanying [Brodzeller et al. (2023)](https://ui.adsabs.harvard.edu/abs/2023AJ....166...66B/abstract). Included in this repository are the quasar templates, SDSS redshift catalog used for training the templates, and an updated HIZ template that accounts for lya mean transmission. The latter model is discussed in Bault et al. (2024). All template files are compatable with [redrock](https://github.com/desihub/redrock). LOZ/HIZv1.0 produced the standard quasar classifications for DESI year one data release. HIZv1.1 refined the z>1.6 DESI year one redshifts for Lya forest cosmology studies, redshift catalog to be released TBD. 
 
 Contact abrodze@gmail.com for questions about this repository.
 
@@ -7,9 +7,9 @@ Contact abrodze@gmail.com for questions about this repository.
 
 **rrtemplate-qso-LOZ.fits** - low redshift (0.05<z<1.6) quasar templates presented in Brodzeller+23
 
-**rrtemplate-qso-HIZ_init.fits** - high redshift (1.4<z<7) quasar templates presented in Brodzeller+23
+**rrtemplate-qso-HIZv1.0.fits** - high redshift (1.4<z<7) quasar templates presented in Brodzeller+23
 
-**rrtemplate-qso-HIZ.fits** - Upgraded high redshift (1.4<z<1.7) quasar templates, trained on identical sample as above HIZ but individual spectra were corrected
+**rrtemplate-qso-HIZv1.1.fits** - Upgraded high redshift (1.4<z<1.7) quasar templates, trained on identical sample as above HIZ but individual spectra were corrected
                           for Lya effective optical depth via Kamble et al. (2020); redshift performance described in Bault et al. (2024)
 
 **trainingsample.fits** - catalog of SDSS spectra used to train the above templates; data model described below
