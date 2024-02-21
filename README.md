@@ -28,12 +28,12 @@ with fits.open('rrtemplate-qso-LOZ.fits') as h:
     vectors = h['BASIS_VECTORS'].data #eigenspectra
     #redshifts = h['REDSHIFTS'].data #redshift coverage of model for running redrock
 
-for i in range(6):
+for i in range(4):
     
     plt.plot(wave, vectors[i]/np.median(vectors[i]), label=f'vector #{i}')
     
 plt.xlabel(r'rest-frame wavelength [$\AA$]')
-plt.ylabel('flux desnity')
+plt.ylabel('flux density')
 plt.legend()
 plt.show()
 ````
