@@ -14,6 +14,13 @@ Contact abrodze@gmail.com for questions about this repository.
 
 **trainingsample.fits** - catalog of SDSS spectra used to train the above templates; data model described below
 
+**clusters directory** - the low-redshift and high-redshift subdirectories contain cluster information corresponding to Table 2 of [Brodzeller et al. (2023)](https://ui.adsabs.harvard.edu/abs/2023AJ....166...66B/abstract). Cluster information for the 0<z<0.35 redshift bin is not included - please email me for the results of this bin. There are four files per redshift bin: 
+- clustersLSNR_z{zmin}-{zmax}.fits.fits : SDSS plate-mjd-fiber-Z_PCA of quasar spectra within each cluster of the low signal-to-noise subset, cluster # (extension name) corresponds to its index in FLUX/IVAR extension of its corresponding composite_spectra*.fits
+- composite_spectraLSNR_z{zmin}-{zmax}.fits.fits : composite spectra constructed from the clusters in corresponding above file, re-sampled to shared loglambda wavelength (extension 'LOGLAMBDA') array
+- clustersHSNR_z{zmin}-{zmax}.fits.fits : SDSS plate-mjd-fiber-Z_PCA of quasar spectra within each cluster of the high signal-to-noise subset, cluster # (extension name) corresponds to its index in FLUX/IVAR extension of composite_spectra.fits
+- composite_spectraHSNR_z{zmin}-{zmax}.fits.fits : composite spectra constructed from the clusters in corresponding above file, re-sampled to shared loglambda wavelength (extension 'LOGLAMBDA') array
+  
+
 # Example plotting for model components
 
 To plot the individual eigenspectra from each file in python:
